@@ -11,6 +11,9 @@ A aplicação está disponível online em:
 
 [Endereço do Projeto](https://stage-frontend-iota.vercel.app)
 
+email: test@example.com
+password: secret
+
 ---
 
 ## Instalação e Execução
