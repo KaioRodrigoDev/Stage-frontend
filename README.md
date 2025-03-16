@@ -9,7 +9,7 @@ O design do projeto pode ser visualizado no seguinte link do **Figma**:
 
 A aplicação está disponível online em:
 
-<!-- [Endereço do Projeto](https://projeto-ficticio.com) -->
+[Endereço do Projeto](https://stage-frontend-iota.vercel.app)
 
 ---
 
@@ -23,8 +23,8 @@ A aplicação está disponível online em:
 ### Clonando o Repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-projeto.git
-cd seu-projeto
+git clone https://github.com/KaioRodrigoDev/Stage-frontend.git
+cd Stage-frontend
 ```
 
 ### Instalando Dependências
