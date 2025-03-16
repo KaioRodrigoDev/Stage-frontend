@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Documentação do Frontend
 
-## Getting Started
+## Visão Geral
 
-First, run the development server:
+Este é o frontend do projeto, desenvolvido em **Next.js**. O sistema utiliza autenticação via **token Bearer**, armazenado no **localStorage** após o login. Uma vez autenticado, o usuário é redirecionado automaticamente para o **dashboard** e tem acesso ao restante da aplicação.
+
+O design do projeto pode ser visualizado no seguinte link do **Figma**:
+[Link do Figma](https://www.figma.com/design/sG8PcWvDF3przrgtV063m8/Stage-Consult?m=auto&t=Aj4FgRNg53pTe907-1)
+
+A aplicação está disponível online em:
+
+<!-- [Endereço do Projeto](https://projeto-ficticio.com) -->
+
+---
+
+## Instalação e Execução
+
+### Requisitos
+
+- **Node.js** (versão 18 ou superior recomendada)
+- **Gerenciador de pacotes** (npm ou yarn)
+
+### Clonando o Repositório
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/seu-usuario/seu-projeto.git
+cd seu-projeto
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Instalando Dependências
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install  # ou yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Rodando o Projeto em Desenvolvimento
 
-## Learn More
+```bash
+npm run dev  # ou yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+A aplicação será iniciada em: `http://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Build para Produção
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build  # ou yarn build
+npm run start  # ou yarn start
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Autenticação
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+O sistema de login utiliza **JWT (JSON Web Token)** para autenticação.
+
+1. O usuário insere suas credenciais na tela de login.
+2. Se autenticado com sucesso, um **token Bearer** é gerado e salvo no **localStorage**.
+3. O token é incluído automaticamente em todas as requisições para rotas protegidas.
+4. Se o token for inválido ou expirar, o usuário é redirecionado para a tela de login.
+
+---
+
+## Estrutura de Pastas
+
+```bash
+/seu-projeto
+│── public/              # Arquivos estáticos (imagens, ícones, etc.)
+│── src/
+│   ├── components/      # Componentes reutilizáveis
+│   ├── app/           # Páginas do Next.js
+│   ├── services/        # Configuração de API e requisições
+│   ├── context/         # Context API
+│   └── types/           # Typagens
+│── .env.local           # Variáveis de ambiente
+│── package.json         # Dependências e scripts
+│── next.config.js       # Configuração do Next.js
+```
